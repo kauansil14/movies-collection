@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+    <h1>Movies collection</h1>
+    <h2>adicionar Filme</h2>
+    <form action="/" method="post">
+        <label for="title">Titulos</label>
+        <input type="text" id="title" name="title" required>
+        <label for="genre">Genero</label>
+        <input type="text" id="genre" name="genre" required> 
+        <button type="subimit">Adicionar Filme</button>
+    <rm>
+
+
+
+    </form>
+    <h2>meus Filmes</h2>
     <h1>Movies</h1>
     <ul>
         {% for movie in movies %}
