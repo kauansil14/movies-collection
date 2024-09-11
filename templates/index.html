@@ -19,7 +19,16 @@
     <h1>Movies</h1>
     <ul>
         {% for movie in movies %}
-            <li>{{ movie['title'] }}</li>
+            <li>
+                {{ movie['title'] }}
+                <a href="/delete/{{ movie['id']}}">
+                    <i class="fa-regular fa-trash-can"></i></a>
+                </a>
+                <a href="/update/{{ movie['id']}}">
+                    <i class="fa-regular fa-pen-to-square"></i></a>
+            </li>
+                </li>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -20,5 +20,29 @@ def indx():
             movies = []
     return render_template('index.html', movies=movies)
 
+@app.route('/delete/<int:id>')
+def delete(id):
+    requests.delete(f'{API_URL}/{id}')
+    return redirect('/')
+
+@app.route('/update/<int:id>')
+def update(id):
+    if request.method =='POST':
+        title = request.get['title']
+        genre = request.get['genre']
+        requests.put(f'{API_URL}/{id},json={'title' title, 'genre': genre}')
+
+
+
+        return redirect('/')
+    
+    response = requests.get(f'{API_URL}/{id}')
+    if response.status_code == 200:
+        movie = response.json()
+    else:
+        movie = {}
+
+    return render_template('update.html', movie)
+
 if __name__ == '__main__':
     app.run(port=5001, debug=True)

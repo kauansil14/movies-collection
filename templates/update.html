@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Movies collection</h1>
+    <h2>atualizar Filme</h2>
+    <form action="/update/{{ movie['id']}}" method="post">
+        <label for="title">Titulos</label>
+        <input type="text" id="title" name="title" required>
+        <label for="genre">Genero</label>
+        <input type="text" id="genre" name="genre" required> 
+        <button type="subimit">Adicionar Filme</button>
+    <rm>
+{% endblock %}
